@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
+using DME.Web.Template;
 using System.Text;
 using System.IO;
-using System.Web;
-
-namespace DME.Web.Template
+namespace www.sabadeda.com.Manager
 {
     /// <summary>
     ///  模板页面基类
@@ -17,32 +17,40 @@ namespace DME.Web.Template
     /// </summary>
     public abstract class AspxPageBase : System.Web.UI.Page
     {
-
         #region 页面处理流程
 
-        private void PageBase_Load(object sender, EventArgs e)
-        {         
-            this.OnRender(e);
-        }
+        //private void PageBase_Load(object sender, EventArgs e)
+        //{
+        //    this.LoadCurrentTemplate();
+        //    this.Document.Render(Response.Output);
+
+        //}
 
 
         /// <summary>
         /// 页面初始化开始
         /// </summary>
         /// <param name="e"></param>
-        protected override void OnInit(EventArgs e)
+        //protected override void OnInit(EventArgs e)
+        //{
+        //    this.Load += new EventHandler(PageBase_Load);
+        //    base.OnInit(e);
+
+        //}
+
+        protected override void OnLoad(EventArgs e)
         {
             this.LoadCurrentTemplate();
-            this.Load += new EventHandler(PageBase_Load);
-            base.OnInit(e);
-
+            this.PageBase_OnLoad(e);
+            base.OnLoad(e);
+            this.OnRender();
         }
 
         /// <summary>
         /// 装载页面数据
         /// </summary>
         /// <param name="e"></param>
-        protected override void OnLoad(EventArgs e)
+        protected virtual void PageBase_OnLoad(EventArgs e)
         {
             if (this.IsPostBack)
             {
@@ -57,39 +65,28 @@ namespace DME.Web.Template
                     this.InitPageTemplate();
                 }
             }
-            base.OnLoad(e);
         }
+
         /// <summary>
-        /// 是否已呈现过页面
+        /// 是否已呈现过缓存文件
         /// </summary>
-        private bool _IsRenderPage = false;
+        private bool _IsCacheFilePage = false;
         /// <summary>
         /// 呈现页面数据
         /// </summary>
         /// <param name="e"></param>
-        protected virtual void OnRender(EventArgs e)
+        protected virtual void OnRender()
         {
-            _IsRenderPage = true;
             if (!this.IsPostBack)
             {
                 //GET方式访问才保存页面缓存
                 this.SavePageCache();
             }
-            //输出页面数据
-            if (this.IsValid)
+            if (this.IsValid && !_IsCacheFilePage)
             {
                 this.Document.Render(Response.Output);
             }
-        }
-
-        /// <summary>
-        /// 页面卸载
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnUnload(EventArgs e)
-        {
-
-            base.OnUnload(e);
+            _IsCacheFilePage = false;
         }
 
         /// <summary>
@@ -98,14 +95,6 @@ namespace DME.Web.Template
         protected abstract void InitPageTemplate();
 
 
-        /// <summary>
-        /// 当页面发生错误时的事件
-        /// </summary>
-        protected override void OnError(EventArgs e)
-        {
-
-            base.OnError(e);
-        }
         #endregion
 
         #region 模板处理
@@ -190,6 +179,7 @@ namespace DME.Web.Template
             }
         }
 
+
         /// <summary>
         /// 当前页面是否是以POST方式访问
         /// </summary>
@@ -210,8 +200,7 @@ namespace DME.Web.Template
         {
             get
             {
-                //return 3600;
-                return 10;
+                return 0;
             }
         }
         /// <summary>
@@ -221,8 +210,7 @@ namespace DME.Web.Template
         {
             get
             {
-                //return null;
-                return this.Server.MapPath("/Temp/Manager/" + Path.GetFileNameWithoutExtension(this.Request.FilePath) + ".html");
+                return null;
             }
         }
 
@@ -249,10 +237,12 @@ namespace DME.Web.Template
                             {
                                 response.Clear();
                                 response.WriteFile(this.PageCacheFileName);
+                                _IsCacheFilePage = true;
                                 return true;
                             }
                         }
                     }
+
                 }
                 catch { }
             }
@@ -273,7 +263,20 @@ namespace DME.Web.Template
                     {
                         string path = Path.GetDirectoryName(this.PageCacheFileName);
                         if (!Directory.Exists(path)) Directory.CreateDirectory(path);
-                        this.Document.RenderTo(this.PageCacheFileName, this.Document.Charset);
+                        FileInfo cacheFile = new FileInfo(this.PageCacheFileName);
+                        if (cacheFile.Exists)
+                        {
+                            TimeSpan span = DateTime.Now.Subtract(cacheFile.LastWriteTime);
+                            if (span.TotalSeconds >= this.PageCacheExpireTime)
+                            {
+                                this.Document.RenderTo(this.PageCacheFileName, this.Document.Charset);
+                            }
+                        }
+                        else
+                        {
+                            this.Document.RenderTo(this.PageCacheFileName, this.Document.Charset);
+                        }
+
                     }
                     catch { }
                 }
