@@ -1,0 +1,14 @@
+I:\Documents\DMElibrary\Lib\Release\DME.Plugins.dll
+I:\Documents\DMElibrary\Lib\Release\DME.Plugins.pdb
+I:\Documents\DMElibrary\DME.Plugins\obj\Release\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\DME.Plugins\obj\Release\DME.Plugins.dll
+I:\Documents\DMElibrary\DME.Plugins\obj\Release\DME.Plugins.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.Plugins.XML
+K:\Documents\DMElibrary\Lib\Release\DME.Plugins.dll
+K:\Documents\DMElibrary\Lib\Release\DME.Plugins.pdb
+K:\Documents\DMElibrary\DME.Plugins\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.Plugins\obj\Release\DME.Plugins.dll
+K:\Documents\DMElibrary\DME.Plugins\obj\Release\DME.Plugins.pdb
+K:\Documents\DMElibrary\SourceCode\DME.Plugins\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.Plugins\obj\Release\DME.Plugins.dll
+K:\Documents\DMElibrary\SourceCode\DME.Plugins\obj\Release\DME.Plugins.pdb
