@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DMEWeb_PagingControl.cs" />
     <Compile Include="Helper\DMEWeb_CacheObject.cs" />
     <Compile Include="Template\AshxPageBase.cs" />
     <Compile Include="Common\DMEWeb_ServerErrorList.cs" />
