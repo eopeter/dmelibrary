@@ -1,0 +1,14 @@
+I:\Documents\DMElibrary\Lib\Release\DME.HtmlPack.dll
+I:\Documents\DMElibrary\Lib\Release\DME.HtmlPack.pdb
+I:\Documents\DMElibrary\DME.HtmlPack\obj\Release\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\DME.HtmlPack\obj\Release\DME.HtmlPack.dll
+I:\Documents\DMElibrary\DME.HtmlPack\obj\Release\DME.HtmlPack.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.HtmlPack.XML
+K:\Documents\DMElibrary\Lib\Release\DME.HtmlPack.dll
+K:\Documents\DMElibrary\Lib\Release\DME.HtmlPack.pdb
+K:\Documents\DMElibrary\DME.HtmlPack\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.HtmlPack\obj\Release\DME.HtmlPack.dll
+K:\Documents\DMElibrary\DME.HtmlPack\obj\Release\DME.HtmlPack.pdb
+K:\Documents\DMElibrary\SourceCode\DME.HtmlPack\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.HtmlPack\obj\Release\DME.HtmlPack.dll
+K:\Documents\DMElibrary\SourceCode\DME.HtmlPack\obj\Release\DME.HtmlPack.pdb
