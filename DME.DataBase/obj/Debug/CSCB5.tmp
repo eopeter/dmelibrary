@@ -1,0 +1,26 @@
+��,多谢!多谢!</fieldset><br>我只使用过StringTemplate，没有使用过NVelocity。但是我想这两个引擎的实现原理大概都是差不多吧，都需要解析字符及字符串实现模板功能，所以在效率上肯定不如asp.net page高，最主要是太耗CPU。我玩意的优点是比较灵活，个人意见是可以在小范围内使用。</fieldset><br>支持这说法</span><br>
+			</div>
+		</div>
+	
+<script type="text/javascript">
+    var commentAuthorHasChecked = false;
+    var commentAuthorIsValid = false;
+    var commentUrlIsValid = true;
+    var commentEmailIsValid = true;
+    var authenCodeHasChecked = false;
+    var authenCodeIsValid = true;
+    var hasLogined = false;
+    
+    function PostComment() {    
+        
+        var isValid = true;
+        
+        if($("#wrapAuthenCode").css("display")=="none"){
+            ShowAuthenCode();
+            $("#tip_AuthenCode").css("color","red");
+            $("#tip_AuthenCode").html("请输入验证码！");
+            isValid = false;
+        }
+        
+        if(!hasLogined && !commentAuthorHasChecked){
+            Chec
