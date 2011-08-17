@@ -1,0 +1,77 @@
+.Net类库里提供了HttpWebRequest等类,方便我们编程与Web服务器进行交互. 但是实际使用中我们经常会遇到以下需求,基础类里没有直接提供相应的功能(WebClient类包含这些功能,只是用起来稍微麻烦一点--谢谢网友东吴居士的提醒): 
+
+?对HttpWebResponse获取的HTML进行文字编码转换,使之不会出现乱码;
+?自动在Session间保持Cookie,Referer等相关信息;
+?模拟HTML表单提交;
+?向服务器上传文件;
+?对二进制的资源,直接获取返回的字节数组(byte[]),或者保存为文件
+为了解决这些问题,我开发了HttpClient类.下面是使用的方法:
+
+?获取编码转换后的字符串
+
+HttpClient client=new HttpClient(url);
+string html=client.GetString();
+
+GetString()函数内部会查找Http Headers, 以及HTML的Meta标签,试图找出获取的内容的编码信息.如果都找不到,它会使用client.DefaultEncoding, 这个属性默认为utf-8, 也可以手动设置.
+
+?自动保持Cookie, Referer
+
+HttpClient client=new HttpClient(url1, null, true);
+string html1=client.GetString();
+client.Url=url2;
+string html2=client.GetString();
+
+这里HttpClient的第三个参数,keepContext设置为真时,HttpClient会自动记录每次交互时服务器对Cookies进行的操作,同时会以前一次请求的Url为Referer.在这个例子里,获取html2时,会把url1作为Referer, 同时会向服务器传递在获取html1时服务器设置的Cookies. 当然,你也可以在构造HttpClient时直接提供第一次请求要发出的Cookies与Referer:
+
+HttpClient client=new HttpClient(url, new WebContext(cookies, referer), true);
+
+或者,在使用过程中随时修改这些信息:
+
+client.Context.Cookies=cookies;
+client.Context.referer=referer;
+
+?模拟HTML表单提交
+
+HttpClient client=new HttpClient(url);
+client.PostingData.Add(fieldName1, filedValue1);
+client.PostingData.Add(fieldName2, fieldValue2);
+string html=client.GetString();
+
+上面的代码相当于提交了一个有两个input的表单. 在PostingData非空,或者附加了要上传的文件时(请看下面的上传和文件), HttpClient会自动把HttpVerb改成POST, 并将相应的信息附加到Request上.
+
+?向服务器上传文件
+
+HttpClient client=new HttpClient(url);
+client.AttachFile(fileName, fieldName);
+client.AttachFile(byteArray, fileName, fieldName);
+string html=client.GetString();
+
+这里面的fieldName相当于<input type="file" name="fieldName" />里的fieldName. fileName当然就是你想要上传的文件路径了. 你也可以直接提供一个byte[] 作为文件内容, 但即使如此,你也必须提供一个文件名,以满足HTTP规范的要求.
+
+?不同的返回形式
+
+字符串: string html = client.GetString();
+流: Stream stream = client.GetStream();
+字节数组: byte[] data = client.GetBytes();
+保存到文件:  client.SaveAsFile(fileName);
+或者,你也可以直接操作HttpWebResponse: HttpWebResponse res = client.GetResponse();
+
+每调用一次上述任何一个方法,都会导致发出一个HTTP Request, 也就是说,你不能同时得到某个Response的两种返回形式.
+另外,调用后它们任意一个之后,你可以通过client.ResponseHeaders来获取服务器返回的HTTP头.
+?下载资源的指定部分(用于断点续传,多线程下载)
+
+HttpClient client=new HttpClient(url);
+//发出HEAD请求,获取资源长度
+int length=client.HeadContentLength();
+
+//只获取后一半内容
+client.StartPoint=length/2;
+byte[] data=client.GetBytes();
+
+HeadContentLength()只会发出HTTP HEAD请求.根据HTTP协议, HEAD与GET的作用等同, 但是,只返回HTTP头,而不返回资源主体内容. 也就是说,用这个方法,你没法获取一个需要通过POST才能得到的资源的长度,如果你确实有这样的需求,建议你可以通过GetResponse(),然后从ResponseHeader里获取Content-Length.
+
+
+计划中还有另外一些功能要加进来,比如断点续传, 多线程下载, 下载进度更新的事件机制等, 正在思考如何与现在的代码融合到一起,期待你的反馈.
+
+ 
+
