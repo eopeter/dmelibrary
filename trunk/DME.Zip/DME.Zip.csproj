@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FE6CAD5-F337-4B09-91C1-9F3156BA929F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DME.Zip</RootNamespace>
+    <AssemblyName>DME.Zip</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Lib\DME.Zip.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Lib\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Lib\Release\DME.Zip.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompressionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZipHelpe.cs" />
+    <Compile Include="Zip\BZip2\BZip2.cs" />
+    <Compile Include="Zip\BZip2\BZip2Constants.cs" />
+    <Compile Include="Zip\BZip2\BZip2Exception.cs" />
+    <Compile Include="Zip\BZip2\BZip2InputStream.cs" />
+    <Compile Include="Zip\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="Zip\Checksums\Adler32.cs" />
+    <Compile Include="Zip\Checksums\CRC32.cs" />
+    <Compile Include="Zip\Checksums\IChecksum.cs" />
+    <Compile Include="Zip\Checksums\StrangeCRC.cs" />
+    <Compile Include="Zip\Core\FileSystemScanner.cs" />
+    <Compile Include="Zip\Core\INameTransform.cs" />
+    <Compile Include="Zip\Core\IScanFilter.cs" />
+    <Compile Include="Zip\Core\NameFilter.cs" />
+    <Compile Include="Zip\Core\PathFilter.cs" />
+    <Compile Include="Zip\Core\StreamUtils.cs" />
+    <Compile Include="Zip\Core\WindowsPathUtils.cs" />
+    <Compile Include="Zip\Encryption\PkzipClassic.cs" />
+    <Compile Include="Zip\GZip\GZIPConstants.cs" />
+    <Compile Include="Zip\GZip\GZipException.cs" />
+    <Compile Include="Zip\GZip\GzipInputStream.cs" />
+    <Compile Include="Zip\GZip\GzipOutputStream.cs" />
+    <Compile Include="Zip\Main.cs" />
+    <Compile Include="Zip\SharpZipBaseException.cs" />
+    <Compile Include="Zip\Tar\InvalidHeaderException.cs" />
+    <Compile Include="Zip\Tar\TarArchive.cs" />
+    <Compile Include="Zip\Tar\TarBuffer.cs" />
+    <Compile Include="Zip\Tar\TarEntry.cs" />
+    <Compile Include="Zip\Tar\TarException.cs" />
+    <Compile Include="Zip\Tar\TarHeader.cs" />
+    <Compile Include="Zip\Tar\TarInputStream.cs" />
+    <Compile Include="Zip\Tar\TarOutputStream.cs" />
+    <Compile Include="Zip\Zip\Compression\Deflater.cs" />
+    <Compile Include="Zip\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="Zip\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="Zip\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="Zip\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="Zip\Zip\Compression\Inflater.cs" />
+    <Compile Include="Zip\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="Zip\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="Zip\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="Zip\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="Zip\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="Zip\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="Zip\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="Zip\Zip\FastZip.cs" />
+    <Compile Include="Zip\Zip\IEntryFactory.cs" />
+    <Compile Include="Zip\Zip\WindowsNameTransform.cs" />
+    <Compile Include="Zip\Zip\ZipConstants.cs" />
+    <Compile Include="Zip\Zip\ZipEntry.cs" />
+    <Compile Include="Zip\Zip\ZipEntryFactory.cs" />
+    <Compile Include="Zip\Zip\ZipException.cs" />
+    <Compile Include="Zip\Zip\ZipExtraData.cs" />
+    <Compile Include="Zip\Zip\ZipFile.cs" />
+    <Compile Include="Zip\Zip\ZipHelperStream.cs" />
+    <Compile Include="Zip\Zip\ZipInputStream.cs" />
+    <Compile Include="Zip\Zip\ZipNameTransform.cs" />
+    <Compile Include="Zip\Zip\ZipOutputStream.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
