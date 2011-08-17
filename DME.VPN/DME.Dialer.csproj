@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{142E6759-FCF7-4E63-A309-7584C0A82D29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DME.Dialer</RootNamespace>
+    <AssemblyName>DME.Dialer</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Lib\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;CODE_ANALYSIS;WINXP;NETCF_2_0</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Lib\DME.Dialer.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Lib\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS;CODE_ANALYSIS;WINXP;NETCF_2_0</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Lib\Release\DME.Dialer.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DME.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DME.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DME_Dialer.cs" />
+    <Compile Include="DotRas\CredentialPromptDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\Design\RasCollection.cs" />
+    <Compile Include="DotRas\Design\RasCommonDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\Design\RasComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\Design\RasOwnedCollection.cs" />
+    <Compile Include="DotRas\DialCompletedEventArgs.cs" />
+    <Compile Include="DotRas\GlobalSuppressions.cs" />
+    <Compile Include="DotRas\Internal\BufferedPInvokeParams.cs" />
+    <Compile Include="DotRas\Internal\IRasHelper.cs" />
+    <Compile Include="DotRas\Internal\ISafeNativeMethods.cs" />
+    <Compile Include="DotRas\Internal\IUnsafeNativeMethods.cs" />
+    <Compile Include="DotRas\Internal\NativeMethods.cs" />
+    <Compile Include="DotRas\Internal\RasGetAutodialAddressParams.cs" />
+    <Compile Include="DotRas\Internal\RasGetAutodialEnableParams.cs" />
+    <Compile Include="DotRas\Internal\RasGetAutodialParamParams.cs" />
+    <Compile Include="DotRas\Internal\RasGetEapUserDataParams.cs" />
+    <Compile Include="DotRas\Internal\RasHelper.cs" />
+    <Compile Include="DotRas\Internal\SafeNativeMethods.cs" />
+    <Compile Include="DotRas\Internal\SRCategoryAttribute.cs" />
+    <Compile Include="DotRas\Internal\SRDescriptionAttribute.cs" />
+    <Compile Include="DotRas\Internal\StructBufferedPInvokeParams.cs" />
+    <Compile Include="DotRas\Internal\ThrowHelper.cs" />
+    <Compile Include="DotRas\Internal\UnsafeNativeMethods.cs" />
+    <Compile Include="DotRas\Internal\Utilities.cs" />
+    <Compile Include="DotRas\InvalidHandleException.cs" />
+    <Compile Include="DotRas\Luid.cs" />
+    <Compile Include="DotRas\RasAmbInfo.cs" />
+    <Compile Include="DotRas\RasAutoDialAddress.cs" />
+    <Compile Include="DotRas\RasAutoDialAddressCollection.cs" />
+    <Compile Include="DotRas\RasAutoDialEntry.cs" />
+    <Compile Include="DotRas\RasAutoDialManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasCcpInfo.cs" />
+    <Compile Include="DotRas\RasCompressionOptions.cs" />
+    <Compile Include="DotRas\RasCompressionType.cs" />
+    <Compile Include="DotRas\RasConnection.cs" />
+    <Compile Include="DotRas\RasConnectionEventArgs.cs" />
+    <Compile Include="DotRas\RasConnectionOptions.cs" />
+    <Compile Include="DotRas\RasConnectionState.cs" />
+    <Compile Include="DotRas\RasConnectionStatus.cs" />
+    <Compile Include="DotRas\RasConnectionSubState.cs" />
+    <Compile Include="DotRas\RasConnectionWatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasCountry.cs" />
+    <Compile Include="DotRas\RasDevice.cs" />
+    <Compile Include="DotRas\RasDeviceType.cs" />
+    <Compile Include="DotRas\RasDialDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasDialer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasDialException.cs" />
+    <Compile Include="DotRas\RasDialMode.cs" />
+    <Compile Include="DotRas\RasDialogStyle.cs" />
+    <Compile Include="DotRas\RasDialOptions.cs" />
+    <Compile Include="DotRas\RasDialOptionsConverter.cs" />
+    <Compile Include="DotRas\RasEapOptions.cs" />
+    <Compile Include="DotRas\RasEapOptionsConverter.cs" />
+    <Compile Include="DotRas\RasEncryptionType.cs" />
+    <Compile Include="DotRas\RasEntry.cs" />
+    <Compile Include="DotRas\RasEntryCollection.cs" />
+    <Compile Include="DotRas\RasEntryDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasEntryNameValidator.cs" />
+    <Compile Include="DotRas\RasEntryOptions.cs" />
+    <Compile Include="DotRas\RasEntryType.cs" />
+    <Compile Include="DotRas\RasErrorEventArgs.cs" />
+    <Compile Include="DotRas\RasException.cs" />
+    <Compile Include="DotRas\RasFramingProtocol.cs" />
+    <Compile Include="DotRas\RasHandle.cs" />
+    <Compile Include="DotRas\RasIdleDisconnectTimeout.cs" />
+    <Compile Include="DotRas\RasIkeV2AuthenticationType.cs" />
+    <Compile Include="DotRas\RasIkeV2Info.cs" />
+    <Compile Include="DotRas\RasIkeV2Options.cs" />
+    <Compile Include="DotRas\RasIPInfo.cs" />
+    <Compile Include="DotRas\RasIPOptions.cs" />
+    <Compile Include="DotRas\RasIPSecEncryptionType.cs" />
+    <Compile Include="DotRas\RasIPv6Info.cs" />
+    <Compile Include="DotRas\RasIpxInfo.cs" />
+    <Compile Include="DotRas\RasIsolationState.cs" />
+    <Compile Include="DotRas\RasLcpAuthenticationDataType.cs" />
+    <Compile Include="DotRas\RasLcpAuthenticationType.cs" />
+    <Compile Include="DotRas\RasLcpInfo.cs" />
+    <Compile Include="DotRas\RasLcpOptions.cs" />
+    <Compile Include="DotRas\RasLinkStatistics.cs" />
+    <Compile Include="DotRas\RasNapStatus.cs" />
+    <Compile Include="DotRas\RasNbfInfo.cs" />
+    <Compile Include="DotRas\RasNetworkProtocols.cs" />
+    <Compile Include="DotRas\RasPhoneBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasPhoneBookDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DotRas\RasPhoneBookDialogEventArgs.cs" />
+    <Compile Include="DotRas\RasPhoneBookType.cs" />
+    <Compile Include="DotRas\RasPppInfo.cs" />
+    <Compile Include="DotRas\RasPreSharedKey.cs" />
+    <Compile Include="DotRas\RasProjectionType.cs" />
+    <Compile Include="DotRas\RasSlipInfo.cs" />
+    <Compile Include="DotRas\RasSubEntry.cs" />
+    <Compile Include="DotRas\RasSubEntryCollection.cs" />
+    <Compile Include="DotRas\RasUpdateCredential.cs" />
+    <Compile Include="DotRas\RasVpnStrategy.cs" />
+    <Compile Include="DotRas\StateChangedEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DotRas\CredentialPromptDialog.bmp" />
+    <Content Include="DotRas\RasAutoDialManager.bmp" />
+    <Content Include="DotRas\RasConnectionWatcher.bmp" />
+    <Content Include="DotRas\RasDialDialog.bmp" />
+    <Content Include="DotRas\RasDialer.bmp" />
+    <Content Include="DotRas\RasEntryDialog.bmp" />
+    <Content Include="DotRas\RasPhoneBook.bmp" />
+    <Content Include="DotRas\RasPhoneBookDialog.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
