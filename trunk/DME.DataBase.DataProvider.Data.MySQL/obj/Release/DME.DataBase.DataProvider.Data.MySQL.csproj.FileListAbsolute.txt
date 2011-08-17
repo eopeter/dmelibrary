@@ -1,0 +1,9 @@
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.MySQL.dll
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.MySQL.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.MySQL.XML
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.MySQL\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.MySQL\obj\Release\DME.DataBase.MySQL.dll
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.MySQL\obj\Release\DME.DataBase.MySQL.pdb
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.MySQL\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.MySQL\obj\Release\DME.DataBase.MySQL.dll
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.MySQL\obj\Release\DME.DataBase.MySQL.pdb
