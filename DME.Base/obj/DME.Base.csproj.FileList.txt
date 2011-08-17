@@ -1,0 +1,6 @@
+..\Lib\DME.Base.dll
+..\Lib\DME.Base.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\DME.Base.dll
+obj\Debug\DME.Base.pdb
+..\Lib\DME.Base.dll.config
