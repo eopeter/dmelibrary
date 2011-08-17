@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01F0D45C-8EC3-4E3F-B2EC-5B77AB834940}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DME.Base</RootNamespace>
+    <AssemblyName>DME.Base</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Lib\DME.Base.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Lib\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\Lib\Release\DME.Base.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\DME_WeakReferenceCachePool.cs" />
+    <Compile Include="Cache\FileCached\Config\DME_FileCachedConfig.cs" />
+    <Compile Include="Cache\FileCached\Config\DME_FileCachedNode.cs" />
+    <Compile Include="Cache\FileCached\Config\DME_FileCachedSection.cs" />
+    <Compile Include="Cache\FileCached\DME_FileCache.cs" />
+    <Compile Include="Cache\FileCached\DME_FileCacheClient.cs" />
+    <Compile Include="Cache\FileCached\Entities\DME_FileCache_Model.cs" />
+    <Compile Include="Cache\MemCached\Config\DME_MemCachedConfig.cs" />
+    <Compile Include="Cache\MemCached\Config\DME_MemCachedNode.cs" />
+    <Compile Include="Cache\MemCached\Config\DME_MemCachedSection.cs" />
+    <Compile Include="Cache\MemCached\DME_HashAlgorithms.cs" />
+    <Compile Include="Cache\MemCached\DME_LogAdapter.cs" />
+    <Compile Include="Cache\MemCached\DME_MemcachedClient.cs" />
+    <Compile Include="Cache\MemCached\DME_MemcachedClientException.cs" />
+    <Compile Include="Cache\MemCached\DME_PooledSocket.cs" />
+    <Compile Include="Cache\MemCached\DME_Serializer.cs" />
+    <Compile Include="Cache\MemCached\DME_ServerPool.cs" />
+    <Compile Include="Cache\MemCached\DME_SocketPool.cs" />
+    <Compile Include="Cache\MemoryCached\Config\DME_MemoryCachedConfig.cs" />
+    <Compile Include="Cache\MemoryCached\Config\DME_MemoryCachedNode.cs" />
+    <Compile Include="Cache\MemoryCached\Config\DME_MemoryCachedSection.cs" />
+    <Compile Include="Cache\MemoryCached\DME_Binder.cs" />
+    <Compile Include="Cache\MemoryCached\DME_CacheItem.cs" />
+    <Compile Include="Cache\MemoryCached\DME_CacheItemDictionary.cs" />
+    <Compile Include="Cache\MemoryCached\DME_GCWrapper.cs" />
+    <Compile Include="Cache\MemoryCached\DME_ICacheOperations.cs" />
+    <Compile Include="Cache\MemoryCached\DME_MemoryCache.cs" />
+    <Compile Include="Cache\MemoryCached\DME_MemoryCacheClient.cs" />
+    <Compile Include="Cache\MemoryCached\DME_SerializationUtility.cs" />
+    <Compile Include="Cache\RedisCached\Config\DME_RedisConfig.cs" />
+    <Compile Include="Cache\RedisCached\Config\DME_RedisNode.cs" />
+    <Compile Include="Cache\RedisCached\Config\DME_RedisSection.cs" />
+    <Compile Include="Cache\RedisCached\DME_KeyType.cs" />
+    <Compile Include="Cache\RedisCached\DME_RedisClient.cs" />
+    <Compile Include="Cache\RedisCached\DME_RedisClientFactory.cs" />
+    <Compile Include="Cache\RedisCached\DME_RedisClient_List.cs" />
+    <Compile Include="Cache\RedisCached\DME_RedisClient_Set.cs" />
+    <Compile Include="Cache\RedisCached\DME_RedisSocket.cs" />
+    <Compile Include="Cache\RedisCached\DME_ResponseException.cs" />
+    <Compile Include="Cache\RedisCached\DME_SortOptions.cs" />
+    <Compile Include="Collections\DME_DictionaryCache.cs" />
+    <Compile Include="Collections\DME_FlagBehavior.cs" />
+    <Compile Include="Collections\DME_WeakReference.cs" />
+    <Compile Include="Collections\Graph\DME_Graph.cs" />
+    <Compile Include="Collections\Graph\DME_GraphFactory.cs" />
+    <Compile Include="Collections\Graph\DME_GraphNode.cs" />
+    <Compile Include="Common\DME_Crc8.cs" />
+    <Compile Include="Collections\DME_Singleton.cs" />
+    <Compile Include="DME_DisposeBase.cs" />
+    <Compile Include="DME_Info.cs" />
+    <Compile Include="Helper\DME_Path.cs" />
+    <Compile Include="DME_Delegates.cs" />
+    <Compile Include="DME_Encoding.cs" />
+    <Compile Include="Collections\DME_Collection.cs" />
+    <Compile Include="Collections\DME_CollectionConverter.cs" />
+    <Compile Include="Collections\DME_Enum.cs" />
+    <Compile Include="Collections\DME_EnumDescription.cs" />
+    <Compile Include="Helper\DME_Serialize.cs" />
+    <Compile Include="IO\DME_BinaryAccessor.cs" />
+    <Compile Include="IO\DME_BinaryReader.cs" />
+    <Compile Include="IO\DME_BinaryWriter.cs" />
+    <Compile Include="IO\DME_Config.cs" />
+    <Compile Include="IO\DME_IBinaryAccessor.cs" />
+    <Compile Include="IO\DME_IStreamHandler.cs" />
+    <Compile Include="IO\DME_IStreamHandlerFactory.cs" />
+    <Compile Include="IO\DME_LHFiles.cs" />
+    <Compile Include="Common\DME_RMB.cs" />
+    <Compile Include="DEncrypt\DME_Base24.cs" />
+    <Compile Include="DEncrypt\DME_Base64.cs" />
+    <Compile Include="DEncrypt\DME_DES.cs" />
+    <Compile Include="DEncrypt\DME_MD5.cs" />
+    <Compile Include="DEncrypt\DME_RSA.cs" />
+    <Compile Include="Common\DME_CNDateTime.cs" />
+    <Compile Include="DEncrypt\DME_SymmetricMethod.cs" />
+    <Compile Include="Helper\DME_DateTime.cs" />
+    <Compile Include="Helper\DME_Files.cs" />
+    <Compile Include="Common\DME_Random.cs" />
+    <Compile Include="Helper\DME_String.cs" />
+    <Compile Include="Helper\DME_TypeParse.cs" />
+    <Compile Include="Helper\DME_Validation.cs" />
+    <Compile Include="DME_LibraryConfig.cs" />
+    <Compile Include="IO\DME_ReadWriteMemoryStream.cs" />
+    <Compile Include="IO\DME_ReadWriteStream.cs" />
+    <Compile Include="IO\DME_StreamHandlerFactory.cs" />
+    <Compile Include="IO\DME_Xml.cs" />
+    <Compile Include="Collections\LinqBridge.cs" />
+    <Compile Include="Log\DME_Log.cs" />
+    <Compile Include="Log\DME_WriteLogEventArgs.cs" />
+    <Compile Include="Network\Application\Ftp.cs" />
+    <Compile Include="Network\Application\TcpEchoServer.cs" />
+    <Compile Include="Network\Application\TcpStreamServer.cs" />
+    <Compile Include="Network\Application\UdpEchoServer.cs" />
+    <Compile Include="Network\Application\UdpStreamServer.cs" />
+    <Compile Include="Network\Common\DME_InterlockedStack.cs" />
+    <Compile Include="Network\Common\DME_NetHelper.cs" />
+    <Compile Include="Network\Common\DME_ObjectPool.cs" />
+    <Compile Include="Network\Common\DME_SingleListNode.cs" />
+    <Compile Include="Network\IO\FileClient.cs" />
+    <Compile Include="Network\IO\FileFormat.cs" />
+    <Compile Include="Network\IO\FileServer.cs" />
+    <Compile Include="Network\Sockets\DME_Netbase.cs" />
+    <Compile Include="Network\Sockets\DME_NetEventArgs.cs" />
+    <Compile Include="Network\Sockets\DME_NetServer.cs" />
+    <Compile Include="Network\Sockets\DME_SocketBase.cs" />
+    <Compile Include="Network\Sockets\DME_SocketClient.cs" />
+    <Compile Include="Network\Sockets\DME_SocketServer.cs" />
+    <Compile Include="Network\Sockets\DME_SocketStream.cs" />
+    <Compile Include="Network\Tcp\DME_TcpClient.cs" />
+    <Compile Include="Network\Tcp\DME_TcpNetServer.cs" />
+    <Compile Include="Network\Tcp\DME_TcpServer.cs" />
+    <Compile Include="Network\Tcp\DME_TcpSession.cs" />
+    <Compile Include="Network\Tcp\DME_TcpSessionCollection.cs" />
+    <Compile Include="Network\Udp\DME_UdpClient.cs" />
+    <Compile Include="Network\Udp\DME_UdpNetServer.cs" />
+    <Compile Include="Network\Udp\DME_UdpServer.cs" />
+    <Compile Include="Network\Udp\DME_UdpStream.cs" />
+    <Compile Include="ObjectManagement\Pool\DME_DefaultPooledObjectCreator.cs" />
+    <Compile Include="ObjectManagement\Pool\DME_IObjectPool.cs" />
+    <Compile Include="ObjectManagement\Pool\DME_IPooledObjectCreator.cs" />
+    <Compile Include="ObjectManagement\Pool\DME_ObjectPool.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\DME_FastIndexAccessor.cs" />
+    <Compile Include="Reflection\DME_FieldInfo.cs" />
+    <Compile Include="Reflection\DME_IIndexAccessor.cs" />
+    <Compile Include="Reflection\DME_MemberInfo.cs" />
+    <Compile Include="Reflection\DME_MethodInfo.cs" />
+    <Compile Include="Reflection\DME_PropertyInfo.cs" />
+    <Compile Include="Reflection\DME_ReflectionHelper.cs" />
+    <Compile Include="Task\DME_CycExecution.cs" />
+    <Compile Include="Task\DME_ImmediateExecution.cs" />
+    <Compile Include="Task\DME_ISchedule.cs" />
+    <Compile Include="Task\DME_ScheduleExecutionOnce.cs" />
+    <Compile Include="Task\DME_Task.cs" />
+    <Compile Include="Task\DME_TaskScheduler.cs" />
+    <Compile Include="Threading\DME_MutiThread.cs" />
+    <Compile Include="Threading\DME_Thread.cs" />
+    <Compile Include="Threading\DME_ThreadPool.cs" />
+    <Compile Include="Threading\DME_ThreadTask.cs" />
+    <Compile Include="Threading\DME_WorkThread.cs" />
+    <Compile Include="Collections\ReaderWriterLockSlim.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
