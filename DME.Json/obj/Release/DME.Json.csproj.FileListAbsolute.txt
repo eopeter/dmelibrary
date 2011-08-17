@@ -1,0 +1,14 @@
+I:\Documents\DMElibrary\DME.Json\obj\Release\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\Lib\Release\DME.Json.dll
+I:\Documents\DMElibrary\Lib\Release\DME.Json.pdb
+I:\Documents\DMElibrary\DME.Json\obj\Release\DME.Json.dll
+I:\Documents\DMElibrary\DME.Json\obj\Release\DME.Json.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.Json.XML
+K:\Documents\DMElibrary\Lib\Release\DME.Json.dll
+K:\Documents\DMElibrary\Lib\Release\DME.Json.pdb
+K:\Documents\DMElibrary\DME.Json\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.Json\obj\Release\DME.Json.dll
+K:\Documents\DMElibrary\DME.Json\obj\Release\DME.Json.pdb
+K:\Documents\DMElibrary\SourceCode\DME.Json\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.Json\obj\Release\DME.Json.dll
+K:\Documents\DMElibrary\SourceCode\DME.Json\obj\Release\DME.Json.pdb
