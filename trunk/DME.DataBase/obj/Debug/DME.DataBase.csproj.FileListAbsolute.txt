@@ -1,0 +1,14 @@
+J:\Documents\DMElibrary\DME.DataBase\bin\Debug\DME.DataBase.dll
+J:\Documents\DMElibrary\DME.DataBase\bin\Debug\DME.DataBase.pdb
+J:\Documents\DMElibrary\DME.DataBase\obj\Debug\ResolveAssemblyReference.cache
+J:\Documents\DMElibrary\DME.DataBase\obj\Debug\DME.DataBase.dll
+J:\Documents\DMElibrary\DME.DataBase\obj\Debug\DME.DataBase.pdb
+J:\Documents\DMElibrary\Lib\DME.DataBase.dll
+J:\Documents\DMElibrary\Lib\DME.DataBase.pdb
+J:\Documents\DMElibrary\Lib\DME.DataBase.XML
+I:\Documents\DMElibrary\Lib\DME.DataBase.XML
+I:\Documents\DMElibrary\Lib\DME.DataBase.dll
+I:\Documents\DMElibrary\Lib\DME.DataBase.pdb
+I:\Documents\DMElibrary\DME.DataBase\obj\Debug\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\DME.DataBase\obj\Debug\DME.DataBase.dll
+I:\Documents\DMElibrary\DME.DataBase\obj\Debug\DME.DataBase.pdb
