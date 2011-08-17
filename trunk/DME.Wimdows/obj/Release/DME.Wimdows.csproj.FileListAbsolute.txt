@@ -1,0 +1,14 @@
+I:\Documents\DMElibrary\Lib\Release\DME.Wimdows.dll
+I:\Documents\DMElibrary\Lib\Release\DME.Wimdows.pdb
+I:\Documents\DMElibrary\DME.Wimdows\obj\Release\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\DME.Wimdows\obj\Release\DME.Wimdows.dll
+I:\Documents\DMElibrary\DME.Wimdows\obj\Release\DME.Wimdows.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.Wimdows.XML
+K:\Documents\DMElibrary\Lib\Release\DME.Wimdows.dll
+K:\Documents\DMElibrary\Lib\Release\DME.Wimdows.pdb
+K:\Documents\DMElibrary\DME.Wimdows\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.Wimdows\obj\Release\DME.Wimdows.dll
+K:\Documents\DMElibrary\DME.Wimdows\obj\Release\DME.Wimdows.pdb
+K:\Documents\DMElibrary\SourceCode\DME.Wimdows\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.Wimdows\obj\Release\DME.Wimdows.dll
+K:\Documents\DMElibrary\SourceCode\DME.Wimdows\obj\Release\DME.Wimdows.pdb
