@@ -1,0 +1,9 @@
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.SQLite.dll
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.SQLite.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.DataBase.SQLite.XML
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\DME.DataBase.SQLite.dll
+K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\DME.DataBase.SQLite.pdb
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\DME.DataBase.SQLite.dll
+K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.Sqlite\obj\Release\DME.DataBase.SQLite.pdb
