@@ -1,0 +1,6 @@
+bin\Debug\DME.Plugins.dll
+bin\Debug\DME.Plugins.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\DME.Plugins.dll
+obj\Debug\DME.Plugins.pdb
+bin\Debug\DME.Plugins.dll.config
