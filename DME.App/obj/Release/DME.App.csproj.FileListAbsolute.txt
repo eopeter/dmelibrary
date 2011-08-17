@@ -1,0 +1,11 @@
+I:\Documents\DMElibrary\Lib\Release\DME.App.dll
+I:\Documents\DMElibrary\Lib\Release\DME.App.pdb
+I:\Documents\DMElibrary\DME.Application\obj\Release\ResolveAssemblyReference.cache
+I:\Documents\DMElibrary\DME.Application\obj\Release\DME.App.dll
+I:\Documents\DMElibrary\DME.Application\obj\Release\DME.App.pdb
+K:\Documents\DMElibrary\Lib\Release\DME.App.XML
+K:\Documents\DMElibrary\Lib\Release\DME.App.dll
+K:\Documents\DMElibrary\Lib\Release\DME.App.pdb
+K:\Documents\DMElibrary\SourceCode\DME.App\obj\Release\ResolveAssemblyReference.cache
+K:\Documents\DMElibrary\SourceCode\DME.App\obj\Release\DME.App.dll
+K:\Documents\DMElibrary\SourceCode\DME.App\obj\Release\DME.App.pdb
