@@ -1,6 +1,0 @@
-..\Lib\DME.DataBase.dll
-..\Lib\DME.DataBase.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\DME.DataBase.dll
-obj\Debug\DME.DataBase.pdb
-..\Lib\DME.DataBase.dll.config
