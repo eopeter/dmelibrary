@@ -1,6 +1,0 @@
-bin\Debug\DME.Wimdows.dll
-bin\Debug\DME.Wimdows.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\DME.Wimdows.dll
-obj\Debug\DME.Wimdows.pdb
-bin\Debug\DME.Wimdows.dll.config
