@@ -1,6 +1,0 @@
-..\Lib\DME.Web.dll
-..\Lib\DME.Web.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\DME.Web.dll
-obj\Debug\DME.Web.pdb
-..\Lib\DME.Web.dll.config
