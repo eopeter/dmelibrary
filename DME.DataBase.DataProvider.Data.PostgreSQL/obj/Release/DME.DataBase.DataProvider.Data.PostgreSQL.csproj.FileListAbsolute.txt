@@ -1,9 +1,0 @@
-K:\Documents\DMElibrary\Lib\Release\DME.DataBase.PostgreSQL.dll
-K:\Documents\DMElibrary\Lib\Release\DME.DataBase.PostgreSQL.pdb
-K:\Documents\DMElibrary\Lib\Release\DME.DataBase.PostgreSQL.XML
-K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\ResolveAssemblyReference.cache
-K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\DME.DataBase.PostgreSQL.dll
-K:\Documents\DMElibrary\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\DME.DataBase.PostgreSQL.pdb
-K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\ResolveAssemblyReference.cache
-K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\DME.DataBase.PostgreSQL.dll
-K:\Documents\DMElibrary\SourceCode\DME.DataBase.DataProvider.Data.PostgreSQL\obj\Release\DME.DataBase.PostgreSQL.pdb
