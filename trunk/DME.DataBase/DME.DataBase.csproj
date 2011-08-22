@@ -132,9 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\EntitySqlMap.config" />
-    <None Include="SqlMap.Config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="SqlMap.xsd">
       <SubType>Designer</SubType>
     </None>
