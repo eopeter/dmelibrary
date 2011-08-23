@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Drawing;
 
-namespace DME.Wimdows.Win32API
+namespace DME.Windows.Win32API
 {
     #region Win32 API 结构体声明
 

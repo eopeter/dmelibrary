@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Drawing;
 
-namespace DME.Wimdows.Win32API
+namespace DME.Windows.Win32API
 {
     [System.Security.SuppressUnmanagedCodeSecurity]
     public static class DMEWin_Win32API

@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Globalization;
 using DME.Base.Helper;
-using DME.Wimdows.Win32API;
+using DME.Windows.Win32API;
 
-namespace DME.Wimdows.IO
+namespace DME.Windows.IO
 {
     /// <summary>
     /// Ini文件操作类

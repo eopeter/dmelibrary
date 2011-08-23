@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Management;
 
-namespace DME.Wimdows.Common
+namespace DME.Windows.Common
 {
     /// <summary>
     /// 计算机硬件获取类。
