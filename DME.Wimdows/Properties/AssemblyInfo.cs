@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("DME.Wimdows")]
+[assembly: AssemblyTitle("DME.Windows")]
 [assembly: AssemblyDescription("Do Maker Exchange windows调用类库")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Do Maker Exchange")]
-[assembly: AssemblyProduct("DME.Wimdows")]
+[assembly: AssemblyProduct("DME.Windows")]
 [assembly: AssemblyCopyright("©2010 Do Maker Exchange All rights reserved;Without permission;Press Ban")]
 [assembly: AssemblyTrademark("Do Maker Exchange")]
 [assembly: AssemblyCulture("")]
