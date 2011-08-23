@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DME.Wimdows.Win32API
+namespace DME.Windows.Win32API
 {
     #region Window API 常数声明
     /// <summary>
