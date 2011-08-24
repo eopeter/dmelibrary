@@ -4,7 +4,7 @@ using System.Web;
 using DME.Web.Template;
 using System.Text;
 using System.IO;
-namespace www.sabadeda.com.Manager
+namespace DME.Web.Template
 {
     /// <summary>
     ///  模板页面基类
