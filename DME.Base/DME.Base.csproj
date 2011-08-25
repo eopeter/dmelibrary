@@ -114,6 +114,7 @@
     <Compile Include="Collections\Graph\DME_GraphNode.cs" />
     <Compile Include="Common\DME_Crc8.cs" />
     <Compile Include="Collections\DME_Singleton.cs" />
+    <Compile Include="DEncrypt\DME_RC4.cs" />
     <Compile Include="DME_DisposeBase.cs" />
     <Compile Include="DME_Info.cs" />
     <Compile Include="Helper\DME_Path.cs" />
