@@ -109,7 +109,7 @@ namespace DME.Windows.Common
                 {
                     if ((bool)mo["IPEnabled"] == true)
                     {
-                        macip.Add(mo["IpAddress"].ToString(),mo["MacAddress"].ToString())
+                        macip.Add(mo["IpAddress"].ToString(), mo["MacAddress"].ToString());
                         break;
                     }
                 }
