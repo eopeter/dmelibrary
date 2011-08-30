@@ -154,7 +154,7 @@ namespace DME.Windows.Common
          #endregion 
    
          #region 构造函数  
-         public Register()  
+         public DMEWin_Register()  
          {
              ///默认注册表项名称  
              _subkey = "software\\";  
@@ -167,7 +167,7 @@ namespace DME.Windows.Common
          /// </summary>  
          /// <param name="subKey">注册表项名称</param>  
          /// <param name="regDomain">注册表基项域</param>  
-         public Register(string subKey, RegDomain regDomain) 
+         public DMEWin_Register(string subKey, RegDomain regDomain) 
          {  
              ///设置注册表项名称  
              _subkey = subKey;  
@@ -484,7 +484,8 @@ namespace DME.Windows.Common
                  return false; 
              } 
  
-             ///创建基于注册表基项的节点              RegistryKey key = GetRegDomain(regDomain); 
+             ///创建基于注册表基项的节点              
+             RegistryKey key = GetRegDomain(regDomain); 
   
              if (IsSubKeyExist(subKey, regDomain)) 
              { 
@@ -536,7 +537,7 @@ namespace DME.Windows.Common
                  ///遍历键值集合，如果存在键值，则退出遍历 
                  foreach (string regeditKey in regeditKeyNames)
                  {
-                     if (string.Compare(regeditKey, _regeditkey, true) == ) 
+                     if (string.Compare(regeditKey, _regeditkey, true) == 0) 
                      { 
                          result = true; 
                          break; 
@@ -578,7 +579,7 @@ namespace DME.Windows.Common
                  ///遍历键值集合，如果存在键值，则退出遍历
                  foreach (string regeditKey in regeditKeyNames) 
                  { 
-                     if (string.Compare(regeditKey, name, true) == ) 
+                     if (string.Compare(regeditKey, name, true) == 0) 
                      {
                          result = true; 
                          break; 
@@ -620,7 +621,7 @@ namespace DME.Windows.Common
                  ///遍历键值集合，如果存在键值，则退出遍历 
                  foreach (string regeditKey in regeditKeyNames)
                  { 
-                     if (string.Compare(regeditKey, name, true) == )
+                     if (string.Compare(regeditKey, name, true) == 0)
                      {
                          result = true; 
                          break;
@@ -663,7 +664,7 @@ namespace DME.Windows.Common
                  ///遍历键值集合，如果存在键值，则退出遍历 
                  foreach (string regeditKey in regeditKeyNames) 
                  { 
-                     if (string.Compare(regeditKey, name, true) == )
+                     if (string.Compare(regeditKey, name, true) == 0)
                      { 
                          result = true; 
                          break; 
