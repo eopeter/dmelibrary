@@ -7,7 +7,7 @@ using Npgsql;
 namespace DME.DataBase.DataProvider.Data
 {
     /// <summary>
-    /// MySQL数据访问类，需要Npgsql.dll支持，这里使用的是For2.0类库
+    /// PostgreSQL数据访问类
     /// </summary>
     public class DMEDb_PostgreSQL : DMEDb_AdoHelper
     {
@@ -92,9 +92,20 @@ namespace DME.DataBase.DataProvider.Data
                 if (restrictionValues == null && string.IsNullOrEmpty(collectionName))
                     return conn.GetSchema();
                 else if (restrictionValues == null && !string.IsNullOrEmpty(collectionName))
-                    return conn.GetSchema(collectionName);
+                {
+                    if (collectionName == "Procedures")
+                        return this.getProcedures();
+                    else
+                        return conn.GetSchema(collectionName); //Procedures
+
+                }
                 else
-                    return conn.GetSchema(collectionName, restrictionValues);
+                {
+                    if (collectionName == "ProcedureParameters")
+                        return getFunctionArgsInfo(restrictionValues[2]);
+                    else
+                        return conn.GetSchema(collectionName, restrictionValues);
+                }
             }
         }
 
@@ -106,6 +117,79 @@ namespace DME.DataBase.DataProvider.Data
         protected override string PrepareSQL(ref string SQL)
         {
             return SQL.Replace("[", "\"").Replace("]", "\"");
+        }
+
+        /// <summary>
+        /// 获取或者设置自增列对应的序列名称
+        /// </summary>
+        public override string InsertKey
+        {
+            get
+            {
+                return string.Format("select currval('\"{0}\"')", base.InsertKey);
+            }
+            set
+            {
+                base.InsertKey = value;
+            }
+        }
+
+        /// <summary>
+        /// 定义获取PostgreSQL的函数参数的函数
+        /// <seealso cref="http://www.alberton.info/postgresql_meta_info.html"/>
+        /// </summary>
+        private void createFunctionArgsInfo()
+        {
+            //由于函数定义语句较长，放到了资源文件中
+            string sql = DME.DataBase.DataProvider.Data.PostgreSQL.Properties.Resources.sql_function_args;
+            this.SqlServerCompatible = false;
+            this.ExecuteNonQuery(sql);
+        }
+
+        /// <summary>
+        /// 获取函数的参数信息
+        /// </summary>
+        /// <param name="functionName">函数名</param>
+        /// <returns></returns>
+        private DataTable getFunctionArgsInfo(string functionName)
+        {
+            string sql = string.Format("select * from function_args('{0}','public');", functionName);
+            DataSet ds = null;
+            try
+            {
+                ds = this.ExecuteDataSet(sql);
+            }
+            catch
+            {
+                createFunctionArgsInfo();
+                ds = this.ExecuteDataSet(sql);
+            }
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns["pos"].ColumnName = "ordinal_position";
+            dt.Columns["argname"].ColumnName = "PARAMETER_NAME";
+            dt.Columns["datatype"].ColumnName = "DATA_TYPE";
+            dt.Columns["direction"].ColumnName = "PARAMETER_MODE";
+            dt.Columns.Add("IS_RESULT", typeof(string));
+            dt.Columns.Add("CHARACTER_MAXIMUM_LENGTH", typeof(int));
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row["PARAMETER_NAME"] == DBNull.Value) row["PARAMETER_NAME"] = "";
+                row["IS_RESULT"] = row["PARAMETER_NAME"].ToString() == "RETURN VALUE" ? "YES" : "NO";
+                row["PARAMETER_MODE"] = row["PARAMETER_MODE"].ToString() == "o" ? "OUT" : row["PARAMETER_MODE"].ToString() == "i" ? "IN" : row["PARAMETER_MODE"];
+            }
+            return dt;
+        }
+
+        private DataTable getProcedures()
+        {
+            string sql = @"SELECT routine_name
+  FROM information_schema.routines
+ WHERE specific_schema NOT IN
+       ('pg_catalog', 'information_schema')
+   AND type_udt_name != 'trigger';";
+            return this.ExecuteDataSet(sql).Tables[0];
         }
     }
 }
