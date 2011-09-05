@@ -124,5 +124,21 @@ namespace DME.DataBase.DataProvider.Data
                     return conn.GetSchema(collectionName, restrictionValues);
             }
         }
+
+        /// <summary>
+        /// 获取或者设置自增列对应的序列名称
+        /// </summary>
+        public override string InsertKey
+        {
+            get
+            {
+
+                return string.Format("select last_insert_rowid()", base.InsertKey);
+            }
+            set
+            {
+                base.InsertKey = value;
+            }
+        }
     }
 }
