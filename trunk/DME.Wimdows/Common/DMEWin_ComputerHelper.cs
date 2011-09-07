@@ -50,61 +50,73 @@ namespace DME.Windows.Common
         IList<string> GetCpuID()
         {
             IList<string> cpuInfo = new List<string>();//cpu序列号
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
-                //获取CPU序列号代码
-                
-                ManagementClass mc = new ManagementClass("Win32_Processor");
-                ManagementObjectCollection moc = mc.GetInstances();
+                //获取CPU序列号代码s            
+                mc = new ManagementClass("Win32_Processor");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     cpuInfo.Add(mo.Properties["ProcessorId"].Value.ToString());
                 }
-                moc = null;
-                mc = null;
-                return cpuInfo;
             }
             catch
             {
-                return cpuInfo;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
-
+            return cpuInfo;
         }
         IList<string> GetMotherboardID()
         {
             IList<string> motherboardid = new List<string>();
+            ManagementObjectSearcher mc = null;
             try
             {
                 //获取主板ID
-                ManagementObjectSearcher mc = new ManagementObjectSearcher("select * from Win32_baseboard");
+                mc = new ManagementObjectSearcher("select * from Win32_baseboard");
                 foreach (ManagementObject mo in mc.Get())
                 {
                     motherboardid.Add(mo["SerialNumber"].ToString());
                     break;
                 }
-                mc = null;
-                return motherboardid;
             }
             catch
             {
-                return motherboardid;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
+            return motherboardid;
         }
         IDictionary<string, string> GetMacAndIP()
         {
             IDictionary<string, string> macip = new Dictionary<string,string>();
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
                 //获取网卡硬件地址
                 
-                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-                ManagementObjectCollection moc = mc.GetInstances();
+                mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     if ((bool)mo["IPEnabled"] == true)
@@ -113,43 +125,55 @@ namespace DME.Windows.Common
                         break;
                     }
                 }
-                moc = null;
-                mc = null;
-                return macip;
             }
             catch
             {
-                return macip;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
-
+            return macip;
         }
         IList<string> GetDiskID()
         {
             IList<string> HDid = new List<string>();
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
                 //获取硬盘ID
-                ManagementClass mc = new ManagementClass("Win32_DiskDrive");
-                ManagementObjectCollection moc = mc.GetInstances();
+                mc = new ManagementClass("Win32_DiskDrive");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     HDid.Add(mo.Properties["Model"].Value.ToString());
                 }
-                moc = null;
-                mc = null;
-                return HDid;
             }
             catch
             {
-                return HDid;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
-
+            return HDid;
         }
         /// <summary>
         /// 操作系统的登录用户名
@@ -158,28 +182,35 @@ namespace DME.Windows.Common
         IList<string> GetUserName()
         {
             IList<string> st = new List<string>();
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
                 
-                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-                ManagementObjectCollection moc = mc.GetInstances();
+                mc = new ManagementClass("Win32_ComputerSystem");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     st.Add(mo["UserName"].ToString());
 
                 }
-                moc = null;
-                mc = null;
-                return st;
             }
             catch
             {
-                return st;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
-
+            return st;
         }
         /// <summary>
         /// PC类型
@@ -188,27 +219,34 @@ namespace DME.Windows.Common
         IList<string> GetSystemType()
         {
             IList<string> st = new List<string>();
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
-                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-                ManagementObjectCollection moc = mc.GetInstances();
+                mc = new ManagementClass("Win32_ComputerSystem");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     st.Add(mo["SystemType"].ToString());
 
                 }
-                moc = null;
-                mc = null;
-                return st;
             }
             catch
             {
-                return st;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
-
+            return st;
         }
 
         /// <summary>
@@ -218,26 +256,34 @@ namespace DME.Windows.Common
         IList<string> GetTotalPhysicalMemory()
         {
             IList<string> st = new List<string>();
+            ManagementClass mc = null;
+            ManagementObjectCollection moc = null;
             try
             {
-                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-                ManagementObjectCollection moc = mc.GetInstances();
+                mc = new ManagementClass("Win32_ComputerSystem");
+                moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
                     st.Add(mo["TotalPhysicalMemory"].ToString());
 
                 }
-                moc = null;
-                mc = null;
-                return st;
             }
             catch
             {
-                return st;
+                
             }
             finally
             {
+                if (!DME.Base.Helper.DME_Validation.IsNull(moc))
+                {
+                    moc.Dispose();
+                }
+                if (!DME.Base.Helper.DME_Validation.IsNull(mc))
+                {
+                    mc.Dispose();
+                }
             }
+            return st;
         }
         /// <summary>
         /// 
