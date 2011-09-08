@@ -46,7 +46,7 @@ namespace DME.Base.Network.Application
     }
     #endregion
 
-    public class Ftp
+    public class DME_Ftp
     {
         #region 属性信息
         /// <summary>
@@ -204,7 +204,7 @@ namespace DME.Base.Network.Application
         /// <param name="FtpUri">FTP地址</param>
         /// <param name="strUserName">登录用户名</param>
         /// <param name="strPassword">登录密码</param>
-        public Ftp(Uri FtpUri, string strUserName, string strPassword)
+        public DME_Ftp(Uri FtpUri, string strUserName, string strPassword)
         {
             this._Uri = new Uri(FtpUri.GetLeftPart(UriPartial.Authority));
             _DirectoryPath = FtpUri.AbsolutePath;
@@ -223,7 +223,7 @@ namespace DME.Base.Network.Application
         /// <param name="strUserName">登录用户名</param>
         /// <param name="strPassword">登录密码</param>
         /// <param name="objProxy">连接代理</param>
-        public Ftp(Uri FtpUri, string strUserName, string strPassword, WebProxy objProxy)
+        public DME_Ftp(Uri FtpUri, string strUserName, string strPassword, WebProxy objProxy)
         {
             this._Uri = new Uri(FtpUri.GetLeftPart(UriPartial.Authority));
             _DirectoryPath = FtpUri.AbsolutePath;
@@ -239,7 +239,7 @@ namespace DME.Base.Network.Application
         /// <summary>
         /// 构造函数
         /// </summary>
-        public Ftp()
+        public DME_Ftp()
         {
             this._UserName = "DME";  //匿名用户
             this._Password = "123";
@@ -250,7 +250,7 @@ namespace DME.Base.Network.Application
         /// <summary>
         /// 析构函数
         /// </summary>
-        ~Ftp()
+        ~DME_Ftp()
         {
             if (Response != null)
             {

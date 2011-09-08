@@ -155,7 +155,8 @@
     <Compile Include="Collections\LinqBridge.cs" />
     <Compile Include="Log\DME_Log.cs" />
     <Compile Include="Log\DME_WriteLogEventArgs.cs" />
-    <Compile Include="Network\Application\Ftp.cs" />
+    <Compile Include="Network\Application\DME_Ftp.cs" />
+    <Compile Include="Network\Application\DME_SmtpMail.cs" />
     <Compile Include="Network\Application\TcpEchoServer.cs" />
     <Compile Include="Network\Application\TcpStreamServer.cs" />
     <Compile Include="Network\Application\UdpEchoServer.cs" />
