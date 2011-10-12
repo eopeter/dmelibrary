@@ -44,7 +44,7 @@ namespace System.Linq
     /// querying objects that implement <see cref="IEnumerable{T}" />.
     /// </summary>
 
-    static partial class Enumerable
+    public static partial class Enumerable
     {
         /// <summary>
         /// Returns the input typed as <see cref="IEnumerable{T}"/>.
@@ -1784,7 +1784,7 @@ namespace System.Linq
     // This partial implementation was template-generated:
     // Sat, 03 Oct 2009 09:42:39 GMT
 
-    partial class Enumerable
+    public partial class Enumerable
     {
         /// <summary>
         /// Computes the sum of a sequence of nullable <see cref="System.Int32" /> values.
@@ -2730,7 +2730,7 @@ namespace System.Runtime.CompilerServices
     /// </remarks>
 
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class | AttributeTargets.Assembly)]
-    internal sealed class ExtensionAttribute : Attribute { }
+    public sealed class ExtensionAttribute : Attribute { }
 }
 
 // $Id: Func.cs 224 2009-10-04 07:13:08Z azizatif $
@@ -2766,7 +2766,7 @@ namespace System.Linq
     /// Represents a collection of objects that have a common key.
     /// </summary>
 
-    partial interface IGrouping<TKey, TElement> : IEnumerable<TElement>
+    public partial interface IGrouping<TKey, TElement> : IEnumerable<TElement>
     {
         /// <summary>
         /// Gets the key of the <see cref="IGrouping{TKey,TElement}" />.
@@ -2788,7 +2788,7 @@ namespace System.Linq
     /// sequences of values.
     /// </summary>
 
-    partial interface ILookup<TKey, TElement> : IEnumerable<IGrouping<TKey, TElement>>
+    public partial interface ILookup<TKey, TElement> : IEnumerable<IGrouping<TKey, TElement>>
     {
         bool Contains(TKey key);
         int Count { get; }
@@ -2806,7 +2806,7 @@ namespace System.Linq
     /// Represents a sorted sequence.
     /// </summary>
 
-    partial interface IOrderedEnumerable<TElement> : IEnumerable<TElement>
+    public partial interface IOrderedEnumerable<TElement> : IEnumerable<TElement>
     {
         /// <summary>
         /// Performs a subsequent ordering on the elements of an 
